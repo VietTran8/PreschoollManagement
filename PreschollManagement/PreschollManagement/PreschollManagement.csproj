@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95693B25-0A46-4C01-A736-C803BBAE2EBB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PreschollManagement</RootNamespace>
+    <AssemblyName>PreschollManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\ClassController.cs" />
+    <Compile Include="Controller\StudentController.cs" />
+    <Compile Include="Controller\TuitionController.cs" />
+    <Compile Include="DB.cs" />
+    <Compile Include="fAccountConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountConfig.Designer.cs">
+      <DependentUpon>fAccountConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAccountMana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountMana.Designer.cs">
+      <DependentUpon>fAccountMana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChooseClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChooseClass.Designer.cs">
+      <DependentUpon>fChooseClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fClassMana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fClassMana.Designer.cs">
+      <DependentUpon>fClassMana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCreateStudyResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCreateStudyResult.Designer.cs">
+      <DependentUpon>fCreateStudyResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHomePage.Designer.cs">
+      <DependentUpon>fHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMenuMana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMenuMana.Designer.cs">
+      <DependentUpon>fMenuMana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormatDtp.cs" />
+    <Compile Include="fProfileManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProfileManagement.Designer.cs">
+      <DependentUpon>fProfileManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fResetPassword.Designer.cs">
+      <DependentUpon>fResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fStudentPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fStudentPrint.Designer.cs">
+      <DependentUpon>fStudentPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fStudyResultMana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fStudyResultMana.Designer.cs">
+      <DependentUpon>fStudyResultMana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTuitionManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTuitionManagement.Designer.cs">
+      <DependentUpon>fTuitionManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Class.cs" />
+    <Compile Include="Model\ContactInfo.cs" />
+    <Compile Include="Model\Parent.cs" />
+    <Compile Include="Model\PersionalInfo.cs" />
+    <Compile Include="Report\rptStudentList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStudentList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Tuition.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentDataSet.cs">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fAccountConfig.resx">
+      <DependentUpon>fAccountConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAccountMana.resx">
+      <DependentUpon>fAccountMana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChooseClass.resx">
+      <DependentUpon>fChooseClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fClassMana.resx">
+      <DependentUpon>fClassMana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCreateStudyResult.resx">
+      <DependentUpon>fCreateStudyResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fHomePage.resx">
+      <DependentUpon>fHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMenuMana.resx">
+      <DependentUpon>fMenuMana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fProfileManagement.resx">
+      <DependentUpon>fProfileManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fResetPassword.resx">
+      <DependentUpon>fResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fStudentPrint.resx">
+      <DependentUpon>fStudentPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fStudyResultMana.resx">
+      <DependentUpon>fStudyResultMana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTuitionManagement.resx">
+      <DependentUpon>fTuitionManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStudentList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStudentList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="StudentDataSet.xsc">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StudentDataSet.xss">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formhomepage-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studentmana-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studentmana-background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studentmana-background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DigitalWater.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chitty Chitty Bang Bang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
