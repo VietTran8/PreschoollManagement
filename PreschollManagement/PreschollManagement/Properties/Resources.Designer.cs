@@ -199,5 +199,15 @@ namespace PreschollManagement.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visualpharm_Must_Have_Log_Out_256 {
+            get {
+                object obj = ResourceManager.GetObject("Visualpharm-Must-Have-Log-Out.256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

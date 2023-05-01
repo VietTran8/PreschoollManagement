@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TuitionDataSet" targetNamespace="http://tempuri.org/TuitionDataSet.xsd" xmlns:mstns="http://tempuri.org/TuitionDataSet.xsd" xmlns="http://tempuri.org/TuitionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TuitionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TuitionDataSet" msprop:Generator_UserDSName="TuitionDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbTuition" msprop:Generator_TableClassName="tbTuitionDataTable" msprop:Generator_TableVarName="tabletbTuition" msprop:Generator_RowChangedName="tbTuitionRowChanged" msprop:Generator_TablePropName="tbTuition" msprop:Generator_RowDeletingName="tbTuitionRowDeleting" msprop:Generator_RowChangingName="tbTuitionRowChanging" msprop:Generator_RowEvHandlerName="tbTuitionRowChangeEventHandler" msprop:Generator_RowDeletedName="tbTuitionRowDeleted" msprop:Generator_RowClassName="tbTuitionRow" msprop:Generator_UserTableName="tbTuition" msprop:Generator_RowEvArgName="tbTuitionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mahocsinh" msprop:Generator_ColumnVarNameInTable="columnmahocsinh" msprop:Generator_ColumnPropNameInRow="mahocsinh" msprop:Generator_ColumnPropNameInTable="mahocsinhColumn" msprop:Generator_UserColumnName="mahocsinh" type="xs:string" minOccurs="0" />
+              <xs:element name="tenhocsinh" msprop:Generator_ColumnVarNameInTable="columntenhocsinh" msprop:Generator_ColumnPropNameInRow="tenhocsinh" msprop:Generator_ColumnPropNameInTable="tenhocsinhColumn" msprop:Generator_UserColumnName="tenhocsinh" type="xs:string" minOccurs="0" />
+              <xs:element name="lop" msprop:Generator_ColumnVarNameInTable="columnlop" msprop:Generator_ColumnPropNameInRow="lop" msprop:Generator_ColumnPropNameInTable="lopColumn" msprop:Generator_UserColumnName="lop" type="xs:string" minOccurs="0" />
+              <xs:element name="tienhocphi" msprop:Generator_ColumnVarNameInTable="columntienhocphi" msprop:Generator_ColumnPropNameInRow="tienhocphi" msprop:Generator_ColumnPropNameInTable="tienhocphiColumn" msprop:Generator_UserColumnName="tienhocphi" type="xs:double" minOccurs="0" />
+              <xs:element name="tienbaohiem" msprop:Generator_ColumnVarNameInTable="columntienbaohiem" msprop:Generator_ColumnPropNameInRow="tienbaohiem" msprop:Generator_ColumnPropNameInTable="tienbaohiemColumn" msprop:Generator_UserColumnName="tienbaohiem" type="xs:double" minOccurs="0" />
+              <xs:element name="tiencapduong" msprop:Generator_ColumnVarNameInTable="columntiencapduong" msprop:Generator_ColumnPropNameInRow="tiencapduong" msprop:Generator_ColumnPropNameInTable="tiencapduongColumn" msprop:Generator_UserColumnName="tiencapduong" type="xs:double" minOccurs="0" />
+              <xs:element name="phikhac" msprop:Generator_ColumnVarNameInTable="columnphikhac" msprop:Generator_ColumnPropNameInRow="phikhac" msprop:Generator_ColumnPropNameInTable="phikhacColumn" msprop:Generator_UserColumnName="phikhac" type="xs:string" minOccurs="0" />
+              <xs:element name="handong" msprop:Generator_ColumnVarNameInTable="columnhandong" msprop:Generator_ColumnPropNameInRow="handong" msprop:Generator_ColumnPropNameInTable="handongColumn" msprop:Generator_UserColumnName="handong" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

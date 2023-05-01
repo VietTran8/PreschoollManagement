@@ -61,5 +61,11 @@ namespace PreschollManagement.Controller
             }
             return "Có lỗi xảy ra, vui lòng thử lại!";
         }
+
+        public static int validateAccount(string username, string password) 
+        {
+            Account newAccount = new Account(username, password);
+            return newAccount.accountValidate();
+        }
     }
 }

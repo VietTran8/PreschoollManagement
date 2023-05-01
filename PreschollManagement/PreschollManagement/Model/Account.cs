@@ -263,5 +263,37 @@ namespace PreschollManagement.Model
                 }
             }
         }
+
+        public int accountValidate()
+        {
+            using (SqlConnection conn = DB.Instance.getConnection())
+            {
+                conn.Open();
+
+                string query = "select vaitro from taikhoan where tentaikhoan = @username and matkhau = @password";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@username", this.username);
+                cmd.Parameters.AddWithValue("@password", this.password);
+
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        return int.Parse(reader["vaitro"].ToString());
+                    }
+                    return -1;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                    return -1;
+                }
+            }
+        }
     }
 }

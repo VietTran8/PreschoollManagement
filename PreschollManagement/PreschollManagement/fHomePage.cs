@@ -12,9 +12,11 @@ namespace PreschollManagement
 {
     public partial class fHomePage : Form
     {
-        public fHomePage()
+        private static int role;
+        public fHomePage(int nrole)
         {
             InitializeComponent();
+            role = nrole;
         }
 
         private void picExitIcon_Click(object sender, EventArgs e)
@@ -92,6 +94,46 @@ namespace PreschollManagement
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void Invisible_Admin()
+        {
+            tsAccountMana.Visible = false;
+            tsClassMana.Visible = false;
+        }
+
+        private void fHomePage_Load(object sender, EventArgs e)
+        {
+            switch (role) 
+            {
+                case 0:
+                    break;
+                case 1:
+                    Invisible_Admin();
+                    btnMenuMana.Enabled = false;
+                    btnTuitionMana.Enabled = false;
+                    break;
+                case 2:
+                    Invisible_Admin();
+                    btnTuitionMana.Enabled = false;
+                    btnMenuMana.Enabled = false;
+                    btnStudentMana.Enabled = false;
+                    break;
+                case 3:
+                    Invisible_Admin();
+                    btnStudyResults.Enabled = false;
+                    btnMenuMana.Enabled = false;
+                    btnStudentMana.Enabled = false;
+                    break;
+                case 4:
+                    Invisible_Admin();
+                    btnStudyResults.Enabled = false;
+                    btnTuitionMana.Enabled = false;
+                    btnStudentMana.Enabled = false;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

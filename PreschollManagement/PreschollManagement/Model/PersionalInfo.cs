@@ -26,6 +26,13 @@ namespace PreschollManagement.Model
             this.religion = religion;
         }
 
+        public PersionalInfo(string firstName, string lastName)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+
         public PersionalInfo(string lastName)
         {
             this.lastName = lastName;

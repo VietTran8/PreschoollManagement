@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PreschollManagement.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,25 @@ namespace PreschollManagement
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fHomePage form = new fHomePage();
-            form.ShowDialog();
-            this.Close();
+            string username = txbUserName.Text;
+            string password = txbPassword.Text;
+            if (username == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                int role = AccountController.validateAccount(username, password);
+                if (role == -1)
+                {
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } else {
+                    fHomePage form = new fHomePage(role);
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
+            }
+            
         }
     }
 }

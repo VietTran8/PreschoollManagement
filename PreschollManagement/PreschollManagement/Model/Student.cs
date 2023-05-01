@@ -28,6 +28,13 @@ namespace PreschollManagement.Model
             this.parent = parent;
         }
 
+        public Student(string studentId, Class studentClass, PersionalInfo persionalInfo)
+        {
+            this.studentId = studentId;
+            this.studentClass = studentClass;
+            this.persionalInfo = persionalInfo;
+        }
+
         public Student(Class studentClass, PersionalInfo persionalInfo,
             ContactInfo contactInfo, Parent parent)
         {

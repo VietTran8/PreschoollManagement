@@ -119,7 +119,7 @@ namespace PreschollManagement
             this.tsAccountMana,
             this.tsClassMana});
             this.tsAdmin.Name = "tsAdmin";
-            this.tsAdmin.Size = new System.Drawing.Size(92, 32);
+            this.tsAdmin.Size = new System.Drawing.Size(92, 30);
             this.tsAdmin.Text = "Quản trị";
             // 
             // tsAccountSetting
@@ -158,7 +158,7 @@ namespace PreschollManagement
             // 
             this.picExitIcon.BackColor = System.Drawing.Color.Transparent;
             this.picExitIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picExitIcon.Image = global::PreschollManagement.Properties.Resources.exit_icon;
+            this.picExitIcon.Image = global::PreschollManagement.Properties.Resources.Visualpharm_Must_Have_Log_Out_256;
             this.picExitIcon.Location = new System.Drawing.Point(116, 372);
             this.picExitIcon.Name = "picExitIcon";
             this.picExitIcon.Size = new System.Drawing.Size(79, 78);
@@ -175,7 +175,7 @@ namespace PreschollManagement
             this.lbExit.BackColor = System.Drawing.Color.Transparent;
             this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbExit.Location = new System.Drawing.Point(120, 453);
+            this.lbExit.Location = new System.Drawing.Point(111, 453);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(71, 26);
             this.lbExit.TabIndex = 8;
@@ -202,6 +202,7 @@ namespace PreschollManagement
             this.Text = "Quản lý trường mầm non";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fHomePage_FormClosing_2);
+            this.Load += new System.EventHandler(this.fHomePage_Load);
             this.menuHomePage.ResumeLayout(false);
             this.menuHomePage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picThumb)).EndInit();

@@ -74,14 +74,19 @@ create table monan(
 	thu int, 
 	buoi int,
 	ghichu text
+	foreign key (mathucdon) references thucdon(mathucdon)
 )
 
+drop table monan
 create table taikhoan(
 	tentaikhoan varchar(30),
 	matkhau varchar(18),
 	vaitro int,
 	primary key (tentaikhoan)
 )
+go
+
+SET DATEFORMAT dmy; 
 go
 
 
@@ -162,23 +167,72 @@ begin
 	insert into phuhuynh (mahocsinh, tenphuhuynh, sodienthoai) values (@newId, @tenphuhuynh, @sodienthoai)
 end
 
-exec themLop N'Mầm A1', 'A001', N'Mầm', '2023 - 2024'
+--exec themLop N'Mầm A1', 'A001', N'Mầm', '2023 - 2024'
 
-exec themHocSinh N'L0001', N'Trần Phan Hoàn', N'Việt', 0, N'2003-08-28', N'Kinh', N'Không', N'Phú Thuận, Mỹ Sơn, Ninh Sơn, Ninh Thuận',
-N'Ninh Hải, Hộ Hải, Ninh Thuận', N'Trần Văn Đức', '0395606425'
+--exec themHocSinh N'L0001', N'Trần Phan Hoàn', N'Việt', 0, '14-04-2003', N'Kinh', N'Không', N'Phú Thuận, Mỹ Sơn, Ninh Sơn, Ninh Thuận',
+--N'Ninh Hải, Hộ Hải, Ninh Thuận', N'Trần Văn Đức', '0395606425'
 
+--select hocsinh.mahocsinh, hocsinh.malop, tenlop, hohocsinh, tenhocsinh, gioitinh, CONVERT(VARCHAR(10), ngaysinh, 105) as 'ngaysinh', dantoc, tongiao, diachi, quequan, tenphuhuynh, sodienthoai 
+--from lop, hocsinh, phuhuynh where hocsinh.malop = lop.malop and hocsinh.mahocsinh = phuhuynh.mahocsinh
+
+SET DATEFORMAT dmy;
+--exec themHocSinh 'L0001', N'jhhhjhjhjj', N'hjhjhjhjhjh', 1, '30-04-2003', N'hjwhhvjjhv', N'kbjkkk', N'sádasdas', N'dâsdas', N'dâsdasd', '12312'
+go
+
+create proc capNhatHocSinh @mahocsinh varchar(6), @malop varchar(5), @hohocsinh nvarchar(100), @tenhocsinh nvarchar(100), 
+@gioitinh int, @ngaysinh date, @dantoc nvarchar(50), @tongiao nvarchar(50), @diachi nvarchar(100),
+@quequan nvarchar(100), @tenphuhuynh nvarchar(100), @sodienthoai varchar(12) as
+begin
+	update hocsinh set malop = @malop, hohocsinh = @hohocsinh,
+	tenhocsinh = @tenhocsinh, gioitinh = @gioitinh, ngaysinh = @ngaysinh, 
+	dantoc = @dantoc, tongiao = @tongiao, diachi = @diachi, quequan = @quequan where mahocsinh = @mahocsinh
+
+	update phuhuynh set tenphuhuynh = @tenphuhuynh, sodienthoai = @sodienthoai where mahocsinh = @mahocsinh
+end
+
+exec capNhatHocSinh 'HS0001', 'L0001', N'Trần Phan Khánh', N'Linh', 1, '28-03-2003', N'Kinh', N'Không', N'Phú Nhuận', N'Phú Thủy', N'Trần Kim Anh', '083881233'
+go
+
+create view InDanhSachHocSinh as
+select hocsinh.mahocsinh as mahs, concat(concat(hohocsinh, ' '), tenhocsinh) as tenhs, ngaysinh, tenlop as lop, tenphuhuynh, sodienthoai from hocsinh, lop, phuhuynh 
+where hocsinh.mahocsinh = phuhuynh.mahocsinh and hocsinh.malop = lop.malop
+
+drop view InDanhSachHocSinh
+select * from InDanhSachHocSinh
+
+set dateformat dmy
+
+insert into hocphi(
+		mahocsinh,
+		namhoc,
+		handong,
+		ngaydong,
+		pttt,
+		tienhocphi,
+		tienbaohiem,
+		tiencapduong,
+		phikhac,
+		trangthai
+	)
+	values(
+		'HS0001',
+		2023,
+		'27-03-2023',
+		'26-03-2023',
+		N'Chuyển khoản',
+		235000,
+		150000,
+		300000,
+		4000,
+		0
+	)
+select mahocphi, hocphi.mahocsinh, hohocsinh, tenhocsinh, tenlop, namhoc, 
+		handong, ngaydong, pttt, tienhocphi, tienbaohiem, 
+		tiencapduong, phikhac, trangthai from hocphi, lop, hocsinh where hocsinh.malop = lop.malop and hocphi.mahocsinh = hocsinh.mahocsinh
+
+select * from hocsinh
 select * from lop
-delete lop
-drop proc themLop
-
-select * from hocsinh 
-select * from phuhuynh
-
-insert into taikhoan values('hello', 'oass', 1)
-select * from taikhoan
-
-select hocsinh.mahocsinh, hocsinh.malop, tenlop, hohocsinh, tenhocsinh, gioitinh, CONVERT(VARCHAR(10), ngaysinh, 105) as 'ngaysinh', dantoc, tongiao, diachi, quequan, tenphuhuynh, sodienthoai 
-from lop, hocsinh, phuhuynh where hocsinh.malop = lop.malop and hocsinh.mahocsinh = phuhuynh.mahocsinh
-
-
+select * from hocphi
+select hocsinh.mahocsinh, tenhocsinh, tenlop as 'lop', tienhocphi, tienbaohiem, tiencapduong, phikhac, CONVERT(VARCHAR(10), handong, 103) as 'handong'  from hocsinh, lop, hocphi where
+hocsinh.malop = lop.malop and hocsinh.mahocsinh = hocphi.mahocsinh and tenlop = N'Lá A2' and namhoc = '2023'
 

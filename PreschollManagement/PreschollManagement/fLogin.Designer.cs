@@ -39,10 +39,10 @@ namespace PreschollManagement
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(686, 438);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(527, 351);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(201, 48);
+            this.btnLogin.Size = new System.Drawing.Size(155, 41);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -50,18 +50,18 @@ namespace PreschollManagement
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(246, 226);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUserName.Location = new System.Drawing.Point(189, 195);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(640, 32);
+            this.txbUserName.Size = new System.Drawing.Size(493, 32);
             this.txbUserName.TabIndex = 0;
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(246, 330);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassword.Location = new System.Drawing.Point(189, 279);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(640, 32);
+            this.txbPassword.Size = new System.Drawing.Size(493, 32);
             this.txbPassword.TabIndex = 1;
             this.txbPassword.UseSystemPasswordChar = true;
             // 
@@ -69,9 +69,9 @@ namespace PreschollManagement
             // 
             this.lbUsername.AutoSize = true;
             this.lbUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbUsername.Location = new System.Drawing.Point(240, 196);
-            this.lbUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUsername.Location = new System.Drawing.Point(185, 166);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(142, 26);
             this.lbUsername.TabIndex = 3;
@@ -81,9 +81,9 @@ namespace PreschollManagement
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbPassword.Location = new System.Drawing.Point(240, 300);
-            this.lbPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPassword.Location = new System.Drawing.Point(185, 250);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(101, 26);
             this.lbPassword.TabIndex = 4;
@@ -95,8 +95,7 @@ namespace PreschollManagement
             this.lbLoginTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbLoginTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoginTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbLoginTitle.Location = new System.Drawing.Point(475, 117);
-            this.lbLoginTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbLoginTitle.Location = new System.Drawing.Point(361, 98);
             this.lbLoginTitle.Name = "lbLoginTitle";
             this.lbLoginTitle.Size = new System.Drawing.Size(219, 37);
             this.lbLoginTitle.TabIndex = 5;
@@ -104,18 +103,17 @@ namespace PreschollManagement
             // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PreschollManagement.Properties.Resources.studentmana_background3;
-            this.ClientSize = new System.Drawing.Size(1156, 585);
+            this.ClientSize = new System.Drawing.Size(890, 492);
             this.Controls.Add(this.lbLoginTitle);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbUsername);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.txbUserName);
             this.Controls.Add(this.btnLogin);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

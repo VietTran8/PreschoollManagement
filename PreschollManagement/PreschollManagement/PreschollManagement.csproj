@@ -109,6 +109,12 @@
       <DependentUpon>fMenuMana.cs</DependentUpon>
     </Compile>
     <Compile Include="FormatDtp.cs" />
+    <Compile Include="fPrintTuition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrintTuition.Designer.cs">
+      <DependentUpon>fPrintTuition.cs</DependentUpon>
+    </Compile>
     <Compile Include="fProfileManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     <Compile Include="fStudyResultMana.Designer.cs">
       <DependentUpon>fStudyResultMana.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTuitionConfirmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTuitionConfirmPrint.Designer.cs">
+      <DependentUpon>fTuitionConfirmPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="fTuitionManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +155,7 @@
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ContactInfo.cs" />
     <Compile Include="Model\Parent.cs" />
+    <Compile Include="Model\Payment.cs" />
     <Compile Include="Model\PersionalInfo.cs" />
     <Compile Include="Report\rptStudentList.cs">
       <AutoGen>True</AutoGen>
@@ -154,6 +167,12 @@
     <Compile Include="Model\Tuition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptTuition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTuition.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StudentDataSet.cs">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </Compile>
@@ -161,6 +180,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TuitionDataSet.cs">
+      <DependentUpon>TuitionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TuitionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TuitionDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="fAccountConfig.resx">
       <DependentUpon>fAccountConfig.cs</DependentUpon>
@@ -186,6 +213,9 @@
     <EmbeddedResource Include="fMenuMana.resx">
       <DependentUpon>fMenuMana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fPrintTuition.resx">
+      <DependentUpon>fPrintTuition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fProfileManagement.resx">
       <DependentUpon>fProfileManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +228,9 @@
     <EmbeddedResource Include="fStudyResultMana.resx">
       <DependentUpon>fStudyResultMana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fTuitionConfirmPrint.resx">
+      <DependentUpon>fTuitionConfirmPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fTuitionManagement.resx">
       <DependentUpon>fTuitionManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +242,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptTuition.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTuition.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -235,6 +272,17 @@
     </None>
     <None Include="StudentDataSet.xss">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TuitionDataSet.xsc">
+      <DependentUpon>TuitionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TuitionDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TuitionDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TuitionDataSet.xss">
+      <DependentUpon>TuitionDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -281,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visualpharm-Must-Have-Log-Out.256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

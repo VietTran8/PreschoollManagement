@@ -16,7 +16,7 @@ namespace PreschollManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fHomePage());
+            Application.Run(new fLogin());
         }
     }
 }

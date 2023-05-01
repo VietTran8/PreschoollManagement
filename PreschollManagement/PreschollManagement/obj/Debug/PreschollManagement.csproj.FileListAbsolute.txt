@@ -58,3 +58,5 @@ D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\Cry
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\stdole.dll
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fStudentPrint.resources
+D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fPrintTuition.resources
+D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fTuitionConfirmPrint.resources

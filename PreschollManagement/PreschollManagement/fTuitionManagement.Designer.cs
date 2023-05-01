@@ -33,7 +33,7 @@ namespace PreschollManagement
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lbInfoTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListTuition = new System.Windows.Forms.DataGridView();
             this.gbListStudent = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gbSearch = new System.Windows.Forms.GroupBox();
@@ -52,7 +52,7 @@ namespace PreschollManagement
             this.txbStudentFirstName = new System.Windows.Forms.TextBox();
             this.lbClass = new System.Windows.Forms.Label();
             this.lbStudentId = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlInfo = new System.Windows.Forms.Panel();
             this.cbStudentId = new System.Windows.Forms.ComboBox();
             this.gbFees = new System.Windows.Forms.GroupBox();
             this.txbOtherFees = new System.Windows.Forms.TextBox();
@@ -76,14 +76,14 @@ namespace PreschollManagement
             this.lbTuitionId = new System.Windows.Forms.Label();
             this.txbTuitionId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPrint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListTuition)).BeginInit();
             this.gbListStudent.SuspendLayout();
             this.gbSearch.SuspendLayout();
             this.gpFunctions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDeleteStudent)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlInfo.SuspendLayout();
             this.gbFees.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,9 +107,9 @@ namespace PreschollManagement
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(236, 935);
+            this.btnCancel.Location = new System.Drawing.Point(220, 923);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 45);
+            this.btnCancel.Size = new System.Drawing.Size(96, 63);
             this.btnCancel.TabIndex = 29;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -122,12 +122,13 @@ namespace PreschollManagement
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSave.Location = new System.Drawing.Point(338, 935);
+            this.btnSave.Location = new System.Drawing.Point(323, 923);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 45);
+            this.btnSave.Size = new System.Drawing.Size(96, 63);
             this.btnSave.TabIndex = 28;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lbInfoTitle
             // 
@@ -141,23 +142,28 @@ namespace PreschollManagement
             this.lbInfoTitle.TabIndex = 27;
             this.lbInfoTitle.Text = "THÔNG TIN HỌC PHÍ";
             // 
-            // dataGridView1
+            // dgvListTuition
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1443, 504);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvListTuition.AllowUserToAddRows = false;
+            this.dgvListTuition.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvListTuition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListTuition.Location = new System.Drawing.Point(6, 32);
+            this.dgvListTuition.Name = "dgvListTuition";
+            this.dgvListTuition.ReadOnly = true;
+            this.dgvListTuition.RowHeadersVisible = false;
+            this.dgvListTuition.RowHeadersWidth = 62;
+            this.dgvListTuition.RowTemplate.Height = 28;
+            this.dgvListTuition.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListTuition.Size = new System.Drawing.Size(1443, 504);
+            this.dgvListTuition.TabIndex = 0;
+            this.dgvListTuition.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListTuition_CellClick);
             // 
             // gbListStudent
             // 
             this.gbListStudent.BackColor = System.Drawing.Color.Transparent;
-            this.gbListStudent.Controls.Add(this.dataGridView1);
+            this.gbListStudent.Controls.Add(this.dgvListTuition);
             this.gbListStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbListStudent.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gbListStudent.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gbListStudent.Location = new System.Drawing.Point(463, 444);
             this.gbListStudent.Name = "gbListStudent";
             this.gbListStudent.Size = new System.Drawing.Size(1455, 542);
@@ -201,10 +207,10 @@ namespace PreschollManagement
             this.rdoByName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdoByName.Location = new System.Drawing.Point(240, 78);
             this.rdoByName.Name = "rdoByName";
-            this.rdoByName.Size = new System.Drawing.Size(135, 26);
+            this.rdoByName.Size = new System.Drawing.Size(207, 26);
             this.rdoByName.TabIndex = 6;
             this.rdoByName.TabStop = true;
-            this.rdoByName.Text = "Tìm theo tên";
+            this.rdoByName.Text = "Tìm theo tên học sinh";
             this.rdoByName.UseVisualStyleBackColor = false;
             // 
             // rdoById
@@ -215,10 +221,10 @@ namespace PreschollManagement
             this.rdoById.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdoById.Location = new System.Drawing.Point(25, 78);
             this.rdoById.Name = "rdoById";
-            this.rdoById.Size = new System.Drawing.Size(197, 26);
+            this.rdoById.Size = new System.Drawing.Size(206, 26);
             this.rdoById.TabIndex = 5;
             this.rdoById.TabStop = true;
-            this.rdoById.Text = "Tìm theo mã học phí";
+            this.rdoById.Text = "Tìm theo mã học sinh";
             this.rdoById.UseVisualStyleBackColor = false;
             // 
             // txbSearch
@@ -255,6 +261,7 @@ namespace PreschollManagement
             this.picAddStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddStudent.TabIndex = 14;
             this.picAddStudent.TabStop = false;
+            this.picAddStudent.EnabledChanged += new System.EventHandler(this.picAddStudent_EnabledChanged);
             this.picAddStudent.Click += new System.EventHandler(this.picAddStudent_Click);
             this.picAddStudent.MouseEnter += new System.EventHandler(this.picAddStudent_MouseEnter);
             this.picAddStudent.MouseLeave += new System.EventHandler(this.picAddStudent_MouseLeave);
@@ -289,6 +296,7 @@ namespace PreschollManagement
             this.picDeleteStudent.TabIndex = 1;
             this.picDeleteStudent.TabStop = false;
             this.picDeleteStudent.EnabledChanged += new System.EventHandler(this.picDeleteStudent_EnabledChanged);
+            this.picDeleteStudent.Click += new System.EventHandler(this.picDeleteStudent_Click);
             this.picDeleteStudent.MouseEnter += new System.EventHandler(this.picDeleteStudent_MouseEnter);
             this.picDeleteStudent.MouseLeave += new System.EventHandler(this.picDeleteStudent_MouseLeave);
             // 
@@ -377,48 +385,51 @@ namespace PreschollManagement
             this.lbStudentId.TabIndex = 1;
             this.lbStudentId.Text = "Mã học sinh";
             // 
-            // panel1
+            // pnlInfo
             // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.cbStudentId);
-            this.panel1.Controls.Add(this.gbFees);
-            this.panel1.Controls.Add(this.cbStatus);
-            this.panel1.Controls.Add(this.lbStatus);
-            this.panel1.Controls.Add(this.txbMethodPayment);
-            this.panel1.Controls.Add(this.lbMethodPayment);
-            this.panel1.Controls.Add(this.dtpPaymentDate);
-            this.panel1.Controls.Add(this.lbPaymentDate);
-            this.panel1.Controls.Add(this.dtpExpirationDate);
-            this.panel1.Controls.Add(this.lbExpirationDate);
-            this.panel1.Controls.Add(this.txbYear);
-            this.panel1.Controls.Add(this.lbYear);
-            this.panel1.Controls.Add(this.lbTuitionId);
-            this.panel1.Controls.Add(this.txbTuitionId);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.lbInfoTitle);
-            this.panel1.Controls.Add(this.cbClass);
-            this.panel1.Controls.Add(this.lbFirstName);
-            this.panel1.Controls.Add(this.lbLastName);
-            this.panel1.Controls.Add(this.txbStudentLastName);
-            this.panel1.Controls.Add(this.txbStudentFirstName);
-            this.panel1.Controls.Add(this.lbClass);
-            this.panel1.Controls.Add(this.lbStudentId);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 998);
-            this.panel1.TabIndex = 9;
+            this.pnlInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlInfo.Controls.Add(this.cbStudentId);
+            this.pnlInfo.Controls.Add(this.gbFees);
+            this.pnlInfo.Controls.Add(this.cbStatus);
+            this.pnlInfo.Controls.Add(this.lbStatus);
+            this.pnlInfo.Controls.Add(this.txbMethodPayment);
+            this.pnlInfo.Controls.Add(this.lbMethodPayment);
+            this.pnlInfo.Controls.Add(this.dtpPaymentDate);
+            this.pnlInfo.Controls.Add(this.lbPaymentDate);
+            this.pnlInfo.Controls.Add(this.dtpExpirationDate);
+            this.pnlInfo.Controls.Add(this.lbExpirationDate);
+            this.pnlInfo.Controls.Add(this.txbYear);
+            this.pnlInfo.Controls.Add(this.lbYear);
+            this.pnlInfo.Controls.Add(this.lbTuitionId);
+            this.pnlInfo.Controls.Add(this.txbTuitionId);
+            this.pnlInfo.Controls.Add(this.btnCancel);
+            this.pnlInfo.Controls.Add(this.btnSave);
+            this.pnlInfo.Controls.Add(this.lbInfoTitle);
+            this.pnlInfo.Controls.Add(this.cbClass);
+            this.pnlInfo.Controls.Add(this.lbFirstName);
+            this.pnlInfo.Controls.Add(this.lbLastName);
+            this.pnlInfo.Controls.Add(this.txbStudentLastName);
+            this.pnlInfo.Controls.Add(this.txbStudentFirstName);
+            this.pnlInfo.Controls.Add(this.lbClass);
+            this.pnlInfo.Controls.Add(this.lbStudentId);
+            this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlInfo.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.pnlInfo.Location = new System.Drawing.Point(0, 0);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(442, 998);
+            this.pnlInfo.TabIndex = 9;
             // 
             // cbStudentId
             // 
+            this.cbStudentId.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbStudentId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStudentId.FormattingEnabled = true;
             this.cbStudentId.Location = new System.Drawing.Point(28, 182);
             this.cbStudentId.Name = "cbStudentId";
             this.cbStudentId.Size = new System.Drawing.Size(172, 34);
             this.cbStudentId.TabIndex = 14;
+            this.cbStudentId.TextChanged += new System.EventHandler(this.cbStudentId_TextChanged);
             // 
             // gbFees
             // 
@@ -524,6 +535,8 @@ namespace PreschollManagement
             // 
             // cbStatus
             // 
+            this.cbStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Chưa đóng",
@@ -532,7 +545,6 @@ namespace PreschollManagement
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(177, 34);
             this.cbStatus.TabIndex = 43;
-            this.cbStatus.Text = "Chưa đóng";
             // 
             // lbStatus
             // 
@@ -655,7 +667,7 @@ namespace PreschollManagement
             this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.gpFunctions);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlInfo);
             this.DoubleBuffered = true;
             this.Name = "fTuitionManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -663,7 +675,7 @@ namespace PreschollManagement
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fTuitionManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPrint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListTuition)).EndInit();
             this.gbListStudent.ResumeLayout(false);
             this.gbSearch.ResumeLayout(false);
             this.gbSearch.PerformLayout();
@@ -671,8 +683,8 @@ namespace PreschollManagement
             ((System.ComponentModel.ISupportInitialize)(this.picAddStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDeleteStudent)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlInfo.ResumeLayout(false);
+            this.pnlInfo.PerformLayout();
             this.gbFees.ResumeLayout(false);
             this.gbFees.PerformLayout();
             this.ResumeLayout(false);
@@ -686,7 +698,7 @@ namespace PreschollManagement
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lbInfoTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListTuition;
         private System.Windows.Forms.GroupBox gbListStudent;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox gbSearch;
@@ -704,7 +716,7 @@ namespace PreschollManagement
         private System.Windows.Forms.TextBox txbStudentFirstName;
         private System.Windows.Forms.Label lbClass;
         private System.Windows.Forms.Label lbStudentId;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label lbYear;
         private System.Windows.Forms.Label lbTuitionId;
         private System.Windows.Forms.TextBox txbTuitionId;
