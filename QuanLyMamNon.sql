@@ -235,3 +235,4 @@ select * from lop
 select * from hocphi
 select hocsinh.mahocsinh, concat(concat(hohocsinh, ' '), tenhocsinh) as 'tenhocsinh', tenlop as 'lop', tienhocphi, tienbaohiem, tiencapduong, phikhac, CONVERT(VARCHAR(10), handong, 103) as 'handong'  from hocsinh, lop, hocphi where hocsinh.malop = lop.malop and hocsinh.mahocsinh = hocphi.mahocsinh and tenlop = N'Lá A2' and namhoc = '2023'
 
+--hehe
