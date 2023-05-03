@@ -32,7 +32,7 @@ namespace PreschollManagement
             this.lbTittle = new System.Windows.Forms.Label();
             this.lbClass = new System.Windows.Forms.Label();
             this.cbClass = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
             this.lbMonth = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -64,16 +64,22 @@ namespace PreschollManagement
             // 
             // cbClass
             // 
+            this.cbClass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClass.FormattingEnabled = true;
             this.cbClass.Location = new System.Drawing.Point(177, 163);
             this.cbClass.Name = "cbClass";
-            this.cbClass.Size = new System.Drawing.Size(461, 28);
+            this.cbClass.Size = new System.Drawing.Size(461, 34);
             this.cbClass.TabIndex = 2;
             // 
-            // comboBox2
+            // cbMonth
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -86,10 +92,10 @@ namespace PreschollManagement
             "10",
             "11",
             "12"});
-            this.comboBox2.Location = new System.Drawing.Point(177, 251);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(461, 28);
-            this.comboBox2.TabIndex = 4;
+            this.cbMonth.Location = new System.Drawing.Point(177, 251);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(461, 34);
+            this.cbMonth.TabIndex = 4;
             // 
             // lbMonth
             // 
@@ -112,6 +118,7 @@ namespace PreschollManagement
             this.button1.TabIndex = 5;
             this.button1.Text = "Tạo";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -134,7 +141,7 @@ namespace PreschollManagement
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbMonth);
             this.Controls.Add(this.lbMonth);
             this.Controls.Add(this.cbClass);
             this.Controls.Add(this.lbClass);
@@ -143,6 +150,7 @@ namespace PreschollManagement
             this.Name = "fCreateStudyResult";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo kết quả học tập mới";
+            this.Load += new System.EventHandler(this.fCreateStudyResult_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,7 +161,7 @@ namespace PreschollManagement
         private System.Windows.Forms.Label lbTittle;
         private System.Windows.Forms.Label lbClass;
         private System.Windows.Forms.ComboBox cbClass;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbMonth;
         private System.Windows.Forms.Label lbMonth;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

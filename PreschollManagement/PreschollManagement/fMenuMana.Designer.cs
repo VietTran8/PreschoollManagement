@@ -53,20 +53,20 @@ namespace PreschollManagement
             this.lbFromDate = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbMenuId = new System.Windows.Forms.TextBox();
             this.lbMenuCode = new System.Windows.Forms.Label();
             this.lbTittle = new System.Windows.Forms.Label();
             this.gbMenu = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlCreate = new System.Windows.Forms.Panel();
             this.btnCreateMenu = new System.Windows.Forms.Button();
             this.lbNoti = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvMenu = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.gbFunction.SuspendLayout();
             this.gbFoodInfo.SuspendLayout();
             this.gbMenuInfo.SuspendLayout();
             this.gbMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlCreate.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,6 +182,8 @@ namespace PreschollManagement
             // 
             // cbDay
             // 
+            this.cbDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDay.FormattingEnabled = true;
             this.cbDay.Items.AddRange(new object[] {
             "2",
@@ -193,10 +195,11 @@ namespace PreschollManagement
             this.cbDay.Name = "cbDay";
             this.cbDay.Size = new System.Drawing.Size(313, 34);
             this.cbDay.TabIndex = 13;
-            this.cbDay.Text = "2";
             // 
             // cbSession
             // 
+            this.cbSession.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSession.FormattingEnabled = true;
             this.cbSession.Items.AddRange(new object[] {
             "Trưa",
@@ -206,7 +209,6 @@ namespace PreschollManagement
             this.cbSession.Name = "cbSession";
             this.cbSession.Size = new System.Drawing.Size(313, 34);
             this.cbSession.TabIndex = 12;
-            this.cbSession.Text = "Trưa";
             // 
             // rtxbNote
             // 
@@ -282,7 +284,7 @@ namespace PreschollManagement
             this.gbMenuInfo.Controls.Add(this.lbFromDate);
             this.gbMenuInfo.Controls.Add(this.dtpToDate);
             this.gbMenuInfo.Controls.Add(this.dtpFromDate);
-            this.gbMenuInfo.Controls.Add(this.textBox1);
+            this.gbMenuInfo.Controls.Add(this.txbMenuId);
             this.gbMenuInfo.Controls.Add(this.lbMenuCode);
             this.gbMenuInfo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbMenuInfo.Location = new System.Drawing.Point(37, 104);
@@ -341,13 +343,13 @@ namespace PreschollManagement
             this.dtpFromDate.Size = new System.Drawing.Size(360, 32);
             this.dtpFromDate.TabIndex = 3;
             // 
-            // textBox1
+            // txbMenuId
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(20, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 32);
-            this.textBox1.TabIndex = 2;
+            this.txbMenuId.Enabled = false;
+            this.txbMenuId.Location = new System.Drawing.Point(20, 81);
+            this.txbMenuId.Name = "txbMenuId";
+            this.txbMenuId.Size = new System.Drawing.Size(360, 32);
+            this.txbMenuId.TabIndex = 2;
             // 
             // lbMenuCode
             // 
@@ -373,8 +375,8 @@ namespace PreschollManagement
             // gbMenu
             // 
             this.gbMenu.BackColor = System.Drawing.Color.Transparent;
-            this.gbMenu.Controls.Add(this.panel2);
-            this.gbMenu.Controls.Add(this.listView1);
+            this.gbMenu.Controls.Add(this.pnlCreate);
+            this.gbMenu.Controls.Add(this.lvMenu);
             this.gbMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMenu.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbMenu.Location = new System.Drawing.Point(37, 512);
@@ -384,14 +386,14 @@ namespace PreschollManagement
             this.gbMenu.TabStop = false;
             this.gbMenu.Text = "Thực đơn";
             // 
-            // panel2
+            // pnlCreate
             // 
-            this.panel2.Controls.Add(this.btnCreateMenu);
-            this.panel2.Controls.Add(this.lbNoti);
-            this.panel2.Location = new System.Drawing.Point(416, 121);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1061, 221);
-            this.panel2.TabIndex = 1;
+            this.pnlCreate.Controls.Add(this.btnCreateMenu);
+            this.pnlCreate.Controls.Add(this.lbNoti);
+            this.pnlCreate.Location = new System.Drawing.Point(416, 121);
+            this.pnlCreate.Name = "pnlCreate";
+            this.pnlCreate.Size = new System.Drawing.Size(1061, 221);
+            this.pnlCreate.TabIndex = 1;
             // 
             // btnCreateMenu
             // 
@@ -418,15 +420,16 @@ namespace PreschollManagement
             this.lbNoti.TabIndex = 1;
             this.lbNoti.Text = "Thực đơn tuần này hiện chưa có, bạn có muốn tạo mới thực đơn cho tuần này?";
             // 
-            // listView1
+            // lvMenu
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(20, 58);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1819, 372);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.Visible = false;
+            this.lvMenu.HideSelection = false;
+            this.lvMenu.Location = new System.Drawing.Point(20, 58);
+            this.lvMenu.Name = "lvMenu";
+            this.lvMenu.Size = new System.Drawing.Size(1819, 372);
+            this.lvMenu.TabIndex = 0;
+            this.lvMenu.UseCompatibleStateImageBehavior = false;
+            this.lvMenu.View = System.Windows.Forms.View.Details;
+            this.lvMenu.Visible = false;
             // 
             // fMenuMana
             // 
@@ -450,8 +453,8 @@ namespace PreschollManagement
             this.gbMenuInfo.ResumeLayout(false);
             this.gbMenuInfo.PerformLayout();
             this.gbMenu.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlCreate.ResumeLayout(false);
+            this.pnlCreate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -468,7 +471,7 @@ namespace PreschollManagement
         private System.Windows.Forms.Label lbFromDate;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbMenuId;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.RichTextBox rtxbNote;
         private System.Windows.Forms.Label lbNote;
@@ -486,8 +489,8 @@ namespace PreschollManagement
         private System.Windows.Forms.Button btnDeleteFood;
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.GroupBox gbMenu;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListView lvMenu;
+        private System.Windows.Forms.Panel pnlCreate;
         private System.Windows.Forms.Button btnCreateMenu;
         private System.Windows.Forms.Label lbNoti;
     }

@@ -31,6 +31,7 @@ namespace PreschollManagement
         {
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.gbFunction = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@ namespace PreschollManagement
             // 
             // gbFunction
             // 
+            this.gbFunction.Controls.Add(this.btnRefresh);
             this.gbFunction.Controls.Add(this.btnAdd);
             this.gbFunction.Controls.Add(this.btnPrint);
             this.gbFunction.Controls.Add(this.btnUpdate);
@@ -107,10 +109,21 @@ namespace PreschollManagement
             this.gbFunction.TabStop = false;
             this.gbFunction.Text = "Chức năng";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnRefresh.Location = new System.Drawing.Point(107, 187);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(136, 39);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnAdd.Location = new System.Drawing.Point(107, 48);
+            this.btnAdd.Location = new System.Drawing.Point(107, 53);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(136, 39);
             this.btnAdd.TabIndex = 12;
@@ -121,17 +134,18 @@ namespace PreschollManagement
             // btnPrint
             // 
             this.btnPrint.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnPrint.Location = new System.Drawing.Point(107, 237);
+            this.btnPrint.Location = new System.Drawing.Point(107, 253);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(136, 39);
             this.btnPrint.TabIndex = 11;
             this.btnPrint.Text = "In";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnUpdate.Location = new System.Drawing.Point(107, 139);
+            this.btnUpdate.Location = new System.Drawing.Point(107, 122);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(136, 39);
             this.btnUpdate.TabIndex = 9;
@@ -188,8 +202,11 @@ namespace PreschollManagement
             // 
             // cbAwareness
             // 
+            this.cbAwareness.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbAwareness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAwareness.FormattingEnabled = true;
             this.cbAwareness.Items.AddRange(new object[] {
+            "Chưa xét",
             "Đạt",
             "Chưa đạt"});
             this.cbAwareness.Location = new System.Drawing.Point(674, 74);
@@ -199,8 +216,11 @@ namespace PreschollManagement
             // 
             // cbSocialAffection
             // 
+            this.cbSocialAffection.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbSocialAffection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSocialAffection.FormattingEnabled = true;
             this.cbSocialAffection.Items.AddRange(new object[] {
+            "Chưa xét",
             "Đạt",
             "Chưa đạt"});
             this.cbSocialAffection.Location = new System.Drawing.Point(399, 156);
@@ -210,8 +230,11 @@ namespace PreschollManagement
             // 
             // cbAesthetic
             // 
+            this.cbAesthetic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbAesthetic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAesthetic.FormattingEnabled = true;
             this.cbAesthetic.Items.AddRange(new object[] {
+            "Chưa xét",
             "Đạt",
             "Chưa đạt"});
             this.cbAesthetic.Location = new System.Drawing.Point(399, 74);
@@ -221,8 +244,11 @@ namespace PreschollManagement
             // 
             // cbLanguage
             // 
+            this.cbLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.FormattingEnabled = true;
             this.cbLanguage.Items.AddRange(new object[] {
+            "Chưa xét",
             "Đạt",
             "Chưa đạt"});
             this.cbLanguage.Location = new System.Drawing.Point(118, 156);
@@ -232,8 +258,11 @@ namespace PreschollManagement
             // 
             // cbPhysical
             // 
+            this.cbPhysical.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbPhysical.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPhysical.FormattingEnabled = true;
             this.cbPhysical.Items.AddRange(new object[] {
+            "Chưa xét",
             "Đạt",
             "Chưa đạt"});
             this.cbPhysical.Location = new System.Drawing.Point(118, 74);
@@ -392,9 +421,24 @@ namespace PreschollManagement
             // 
             // cbMonth
             // 
+            this.cbMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMonth.FormattingEnabled = true;
-            this.cbMonth.Location = new System.Drawing.Point(977, 92);
+            this.cbMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbMonth.Location = new System.Drawing.Point(977, 87);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(121, 34);
             this.cbMonth.TabIndex = 11;
@@ -412,9 +456,12 @@ namespace PreschollManagement
             // 
             // cbClass
             // 
+            this.cbClass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClass.DropDownWidth = 300;
             this.cbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClass.FormattingEnabled = true;
-            this.cbClass.Location = new System.Drawing.Point(700, 92);
+            this.cbClass.Location = new System.Drawing.Point(700, 87);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(121, 34);
             this.cbClass.TabIndex = 5;
@@ -478,7 +525,7 @@ namespace PreschollManagement
             // 
             this.gpListInfo.Controls.Add(this.dgvResultList);
             this.gpListInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpListInfo.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gpListInfo.ForeColor = System.Drawing.SystemColors.Desktop;
             this.gpListInfo.Location = new System.Drawing.Point(50, 15);
             this.gpListInfo.Name = "gpListInfo";
             this.gpListInfo.Size = new System.Drawing.Size(1822, 463);
@@ -488,13 +535,19 @@ namespace PreschollManagement
             // 
             // dgvResultList
             // 
+            this.dgvResultList.AllowUserToAddRows = false;
+            this.dgvResultList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResultList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultList.Location = new System.Drawing.Point(6, 31);
             this.dgvResultList.Name = "dgvResultList";
+            this.dgvResultList.ReadOnly = true;
+            this.dgvResultList.RowHeadersVisible = false;
             this.dgvResultList.RowHeadersWidth = 62;
             this.dgvResultList.RowTemplate.Height = 28;
+            this.dgvResultList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultList.Size = new System.Drawing.Size(1810, 426);
             this.dgvResultList.TabIndex = 0;
+            this.dgvResultList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultList_CellClick);
             // 
             // fStudyResultMana
             // 
@@ -567,5 +620,6 @@ namespace PreschollManagement
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

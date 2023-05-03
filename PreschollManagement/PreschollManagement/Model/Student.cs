@@ -348,5 +348,60 @@ namespace PreschollManagement.Model
                 }
             }
         }
+
+        public List<Student> getListStudentByClass()
+        {
+            string classId = this.Class.Id;
+            string schoolYear = this.Class.SchoolYear.Trim();
+
+
+            List<Student> list = new List<Student>();
+            using (SqlConnection conn = DB.Instance.getConnection())
+            {
+                conn.Open();
+                string query = "select hocsinh.mahocsinh, hocsinh.malop, tenlop, " +
+                    "hohocsinh, tenhocsinh, gioitinh, CONVERT(VARCHAR(10), ngaysinh, 105) as 'ngaysinh'" +
+                    ", dantoc, tongiao, " +
+                    "diachi, quequan, tenphuhuynh, sodienthoai from lop, hocsinh, " +
+                    "phuhuynh where hocsinh.malop = lop.malop and " +
+                    "hocsinh.mahocsinh = phuhuynh.mahocsinh and lop.malop = @malop and lop.nienkhoa = @nienkhoa";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@malop", classId);
+                cmd.Parameters.AddWithValue("@nienkhoa", schoolYear);
+
+
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Class newClass = new Class(reader["malop"].ToString(), reader["tenlop"].ToString());
+
+                        PersionalInfo myInfo = new PersionalInfo(reader["hohocsinh"].ToString(),
+                            reader["tenhocsinh"].ToString(), int.Parse(reader["gioitinh"].ToString()),
+                            reader["ngaysinh"].ToString(), reader["dantoc"].ToString(),
+                            reader["tongiao"].ToString());
+
+                        ContactInfo myContact = new ContactInfo(reader["diachi"].ToString(), reader["quequan"].ToString());
+
+                        Parent myParent = new Parent(reader["tenphuhuynh"].ToString(), reader["sodienthoai"].ToString());
+
+                        Student myStudent = new Student(reader["mahocsinh"].ToString(),
+                            newClass, myInfo, myContact, myParent);
+                        list.Add(myStudent);
+                    }
+                    conn.Close();
+                   
+                    return list;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                    return null;
+                }
+            }
+        }
     }
 }

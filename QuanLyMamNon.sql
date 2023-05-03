@@ -235,3 +235,16 @@ select * from lop
 select * from hocphi
 select hocsinh.mahocsinh, concat(concat(hohocsinh, ' '), tenhocsinh) as 'tenhocsinh', tenlop as 'lop', tienhocphi, tienbaohiem, tiencapduong, phikhac, CONVERT(VARCHAR(10), handong, 103) as 'handong'  from hocsinh, lop, hocphi where hocsinh.malop = lop.malop and hocsinh.mahocsinh = hocphi.mahocsinh and tenlop = N'Lá A2' and namhoc = '2023'
 
+select * from kqrenluyen
+delete kqrenluyen
+
+select mahocsinh from hocsinh where hocsinh.mahocsinh not in (
+	select mahocsinh from kqrenluyen where thang = 1
+) and hocsinh.malop in (
+	select lop.malop from kqrenluyen, hocsinh, lop where kqrenluyen.mahocsinh = hocsinh.mahocsinh and lop.malop = hocsinh.malop and lop.nienkhoa = '2023 - 2024'
+) and hocsinh.malop = 'L0008'
+
+select maketqua, hocsinh.mahocsinh, concat(concat(hohocsinh, ' '), tenhocsinh) as 'hovaten', thechat, nhanthuc, ngongu, tinhcamxh, thammy 
+from kqrenluyen, hocsinh, lop where kqrenluyen.mahocsinh = hocsinh.mahocsinh and hocsinh.malop = Lop.malop and lop.malop = 'L0008' and thang = 1 and nienkhoa = '2023 - 2024'
+
+select * from hocsinh

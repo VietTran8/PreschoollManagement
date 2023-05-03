@@ -57,7 +57,9 @@
   <ItemGroup>
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\ClassController.cs" />
+    <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Controller\StudentController.cs" />
+    <Compile Include="Controller\StudyResultController.cs" />
     <Compile Include="Controller\TuitionController.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="fAccountConfig.cs">
@@ -109,6 +111,12 @@
       <DependentUpon>fMenuMana.cs</DependentUpon>
     </Compile>
     <Compile Include="FormatDtp.cs" />
+    <Compile Include="fPrintResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrintResult.Designer.cs">
+      <DependentUpon>fPrintResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="fPrintTuition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,9 +162,11 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ContactInfo.cs" />
+    <Compile Include="Model\MyMenu.cs" />
     <Compile Include="Model\Parent.cs" />
     <Compile Include="Model\Payment.cs" />
     <Compile Include="Model\PersionalInfo.cs" />
+    <Compile Include="Model\StudyResults.cs" />
     <Compile Include="Report\rptStudentList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,6 +181,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptTuition.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ResultDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResultDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptResult.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResult.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="StudentDataSet.cs">
@@ -213,6 +234,9 @@
     <EmbeddedResource Include="fMenuMana.resx">
       <DependentUpon>fMenuMana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fPrintResult.resx">
+      <DependentUpon>fPrintResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fPrintTuition.resx">
       <DependentUpon>fPrintTuition.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +271,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTuition.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptResult.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResult.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -262,6 +290,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ResultDataSet.xsc">
+      <DependentUpon>ResultDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ResultDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResultDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ResultDataSet.xss">
+      <DependentUpon>ResultDataSet.xsd</DependentUpon>
+    </None>
     <None Include="StudentDataSet.xsc">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </None>

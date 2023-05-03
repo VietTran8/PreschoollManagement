@@ -102,7 +102,6 @@ namespace PreschollManagement
             // menuHomePage
             // 
             this.menuHomePage.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.menuHomePage.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuHomePage.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuHomePage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsAdmin});

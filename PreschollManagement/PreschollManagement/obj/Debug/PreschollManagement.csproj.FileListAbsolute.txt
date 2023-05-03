@@ -60,3 +60,4 @@ D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\std
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fStudentPrint.resources
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fPrintTuition.resources
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fTuitionConfirmPrint.resources
+D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fPrintResult.resources
