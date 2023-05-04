@@ -24,8 +24,11 @@ namespace PreschollManagement
             if (cbClass.Text == "" || cbMonth.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn lớp và tháng", "Thông báo");
+                btnSearch.Enabled = false;
             }
             else {
+                btnSearch.Enabled = true;
+
                 string ClassInfo = cbClass.Text;
                 int month = int.Parse(cbMonth.Text);
 
@@ -86,6 +89,7 @@ namespace PreschollManagement
             Load_ClassList();
             btnRefresh.Enabled = false;
             btnPrint.Enabled = false ;
+            btnSearch.Enabled = false;
 
         }
 
@@ -202,6 +206,29 @@ namespace PreschollManagement
             }
             else {
                 MessageBox.Show("Danh sách kết quả này chưa có!", "Thông báo");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string option = cbSearchBy.Text;
+            string searching = txbSearch.Text;
+            if (searching == "")
+                MessageBox.Show("Vui lòng nhập thông tin cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                if (option == "Mã HS")
+                {
+                    string ClassInfo = cbClass.Text;
+                    int month = int.Parse(cbMonth.Text);
+                    dgvResultList.DataSource = StudyResultController.viewListStudyResultByStudentId(month, ClassInfo, searching);
+                }
+                else
+                {
+                    string ClassInfo = cbClass.Text;
+                    int month = int.Parse(cbMonth.Text);
+                    dgvResultList.DataSource = StudyResultController.viewListStudyResultByStudentName(month, ClassInfo, searching);
+                }
             }
         }
     }

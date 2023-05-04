@@ -109,18 +109,21 @@ namespace PreschollManagement
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.EnabledChanged += new System.EventHandler(this.btnSave_EnabledChanged);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(872, 31);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(145, 50);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.EnabledChanged += new System.EventHandler(this.btnCancel_EnabledChanged);
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEditFood
@@ -134,6 +137,8 @@ namespace PreschollManagement
             this.btnEditFood.TabIndex = 9;
             this.btnEditFood.Text = "Sửa món";
             this.btnEditFood.UseVisualStyleBackColor = false;
+            this.btnEditFood.EnabledChanged += new System.EventHandler(this.btnEditFood_EnabledChanged);
+            this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
             // btnDeleteFood
             // 
@@ -146,6 +151,8 @@ namespace PreschollManagement
             this.btnDeleteFood.TabIndex = 8;
             this.btnDeleteFood.Text = "Xóa món";
             this.btnDeleteFood.UseVisualStyleBackColor = false;
+            this.btnDeleteFood.EnabledChanged += new System.EventHandler(this.btnDeleteFood_EnabledChanged);
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnAddFood
             // 
@@ -158,6 +165,7 @@ namespace PreschollManagement
             this.btnAddFood.TabIndex = 7;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = false;
+            this.btnAddFood.EnabledChanged += new System.EventHandler(this.btnAddFood_EnabledChanged);
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // gbFoodInfo
@@ -195,6 +203,7 @@ namespace PreschollManagement
             this.cbDay.Name = "cbDay";
             this.cbDay.Size = new System.Drawing.Size(313, 34);
             this.cbDay.TabIndex = 13;
+            this.cbDay.EnabledChanged += new System.EventHandler(this.cbDay_EnabledChanged);
             // 
             // cbSession
             // 
@@ -209,6 +218,7 @@ namespace PreschollManagement
             this.cbSession.Name = "cbSession";
             this.cbSession.Size = new System.Drawing.Size(313, 34);
             this.cbSession.TabIndex = 12;
+            this.cbSession.EnabledChanged += new System.EventHandler(this.cbSession_EnabledChanged);
             // 
             // rtxbNote
             // 
@@ -217,6 +227,7 @@ namespace PreschollManagement
             this.rtxbNote.Size = new System.Drawing.Size(380, 108);
             this.rtxbNote.TabIndex = 11;
             this.rtxbNote.Text = "";
+            this.rtxbNote.EnabledChanged += new System.EventHandler(this.rtxbNote_EnabledChanged);
             // 
             // lbNote
             // 
@@ -233,6 +244,7 @@ namespace PreschollManagement
             this.txbFoodId.Name = "txbFoodId";
             this.txbFoodId.Size = new System.Drawing.Size(313, 32);
             this.txbFoodId.TabIndex = 8;
+            this.txbFoodId.EnabledChanged += new System.EventHandler(this.txbFoodId_EnabledChanged);
             // 
             // txbFoodName
             // 
@@ -240,6 +252,7 @@ namespace PreschollManagement
             this.txbFoodName.Name = "txbFoodName";
             this.txbFoodName.Size = new System.Drawing.Size(313, 32);
             this.txbFoodName.TabIndex = 7;
+            this.txbFoodName.EnabledChanged += new System.EventHandler(this.txbFoodName_EnabledChanged);
             // 
             // lbFoodName
             // 
@@ -296,7 +309,7 @@ namespace PreschollManagement
             // 
             // btnView
             // 
-            this.btnView.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnView.BackColor = System.Drawing.Color.LightGreen;
             this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnView.Location = new System.Drawing.Point(206, 303);
@@ -305,6 +318,7 @@ namespace PreschollManagement
             this.btnView.TabIndex = 0;
             this.btnView.Text = "Xem";
             this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.EnabledChanged += new System.EventHandler(this.btnView_EnabledChanged);
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // lbToDate
@@ -422,6 +436,7 @@ namespace PreschollManagement
             // 
             // lvMenu
             // 
+            this.lvMenu.FullRowSelect = true;
             this.lvMenu.HideSelection = false;
             this.lvMenu.Location = new System.Drawing.Point(20, 58);
             this.lvMenu.Name = "lvMenu";
@@ -430,6 +445,7 @@ namespace PreschollManagement
             this.lvMenu.UseCompatibleStateImageBehavior = false;
             this.lvMenu.View = System.Windows.Forms.View.Details;
             this.lvMenu.Visible = false;
+            this.lvMenu.SelectedIndexChanged += new System.EventHandler(this.lvMenu_SelectedIndexChanged);
             // 
             // fMenuMana
             // 

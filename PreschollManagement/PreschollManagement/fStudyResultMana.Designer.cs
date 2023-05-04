@@ -510,6 +510,7 @@ namespace PreschollManagement
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // pnlList
             // 

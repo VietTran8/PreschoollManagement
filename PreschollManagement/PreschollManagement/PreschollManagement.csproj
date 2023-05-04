@@ -162,6 +162,7 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ContactInfo.cs" />
+    <Compile Include="Model\Food.cs" />
     <Compile Include="Model\MyMenu.cs" />
     <Compile Include="Model\Parent.cs" />
     <Compile Include="Model\Payment.cs" />

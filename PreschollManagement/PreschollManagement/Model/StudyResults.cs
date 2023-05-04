@@ -368,5 +368,86 @@ namespace PreschollManagement.Model
             }
 
         }
+
+        public static DataTable viewStudyResultByStudentId(int month, string classId, string schoolYear, string search)
+        {
+            string query = "select maketqua as N'Mã kết quả', hocsinh.mahocsinh as N'Mã học sinh', concat(concat(hohocsinh, ' '), tenhocsinh) as 'Họ và tên', " +
+                "CASE WHEN thechat = 0 THEN N'Chưa xét' WHEN thechat = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Thể chất', " +
+                "CASE WHEN nhanthuc = 0 THEN N'Chưa xét' WHEN nhanthuc = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Nhận thức', " +
+                "CASE WHEN ngongu = 0 THEN N'Chưa xét' WHEN ngongu = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Ngôn ngữ', " +
+                "CASE WHEN tinhcamxh = 0 THEN N'Chưa xét' WHEN tinhcamxh = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Tình cảm xã hội', " +
+                "CASE WHEN thammy = 0 THEN N'Chưa xét' WHEN thammy = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Thẩm mỹ' " +
+                "from kqrenluyen, hocsinh, lop " +
+                "where kqrenluyen.mahocsinh = hocsinh.mahocsinh and hocsinh.malop = Lop.malop " +
+                "and lop.malop = @classId and thang = @month and nienkhoa = @schoolYear " +
+                "and hocsinh.mahocsinh like @timkiem";
+            DataTable table = new DataTable();
+            using (SqlConnection conn = DB.Instance.getConnection())
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@classId", classId);
+                cmd.Parameters.AddWithValue("@month", month);
+                cmd.Parameters.AddWithValue("@schoolYear", schoolYear);
+                cmd.Parameters.AddWithValue("@timkiem", search);
+
+                try
+                {
+                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+
+                    adpt.Fill(table);
+
+                    return table;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                    return null;
+                }
+            }
+        }
+
+        public static DataTable viewStudyResultByStudentName(int month, string classId, string schoolYear, string search)
+        {
+            string query = "select maketqua as N'Mã kết quả', hocsinh.mahocsinh as N'Mã học sinh', concat(concat(hohocsinh, ' '), tenhocsinh) as 'Họ và tên', " +
+                "CASE WHEN thechat = 0 THEN N'Chưa xét' WHEN thechat = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Thể chất', " +
+                "CASE WHEN nhanthuc = 0 THEN N'Chưa xét' WHEN nhanthuc = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Nhận thức', " +
+                "CASE WHEN ngongu = 0 THEN N'Chưa xét' WHEN ngongu = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Ngôn ngữ', " +
+                "CASE WHEN tinhcamxh = 0 THEN N'Chưa xét' WHEN tinhcamxh = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Tình cảm xã hội', " +
+                "CASE WHEN thammy = 0 THEN N'Chưa xét' WHEN thammy = 1 THEN N'Chưa đạt' ELSE N'Đạt' END as N'Thẩm mỹ' " +
+                "from kqrenluyen, hocsinh, lop " +
+                "where kqrenluyen.mahocsinh = hocsinh.mahocsinh and hocsinh.malop = Lop.malop " +
+                "and lop.malop = @classId and thang = @month and nienkhoa = @schoolYear " +
+                "and hocsinh.tenhocsinh like @timkiem";
+            DataTable table = new DataTable();
+            using (SqlConnection conn = DB.Instance.getConnection())
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@classId", classId);
+                cmd.Parameters.AddWithValue("@month", month);
+                cmd.Parameters.AddWithValue("@schoolYear", schoolYear);
+                cmd.Parameters.AddWithValue("@timkiem", search);
+
+                try
+                {
+                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+
+                    adpt.Fill(table);
+
+                    return table;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                    return null;
+                }
+            }
+        }
+
     }
 }

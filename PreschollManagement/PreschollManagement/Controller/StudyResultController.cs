@@ -136,5 +136,26 @@ namespace PreschollManagement.Controller
             }
             return null;
         }
+
+        public static DataTable viewListStudyResultByStudentId(int month, string classInfo, string search)
+        {
+            string[] splited = classInfo.Split('-');
+            string classId = splited[0].Trim();
+            string schoolYear = (splited[2] + "-" + splited[3]);
+
+            DataTable table = StudyResults.viewStudyResultByStudentId(month, classId, schoolYear.Trim(), search);
+            return table;
+        }
+
+
+        public static DataTable viewListStudyResultByStudentName(int month, string classInfo, string search)
+        {
+            string[] splited = classInfo.Split('-');
+            string classId = splited[0].Trim();
+            string schoolYear = (splited[2] + "-" + splited[3]);
+
+            DataTable table = StudyResults.viewStudyResultByStudentName(month, classId, schoolYear.Trim(), search);
+            return table;
+        }
     }
 }

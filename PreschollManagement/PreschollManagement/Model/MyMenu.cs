@@ -86,7 +86,7 @@ namespace PreschollManagement.Model
 
                 string[] splited = this.startDate.Split('-');
 
-                string newStartDay = splited[2]+"-"+splited[1]+"-"+splited[0];
+                string newStartDay = splited[2] + "-" + splited[1] + "-" + splited[0];
 
                 cmd.Parameters.AddWithValue("@ngaybatdau", newStartDay);
 
@@ -95,7 +95,7 @@ namespace PreschollManagement.Model
                 if (reader.HasRows)
                 {
                     return true;
-                }   
+                }
                 return false;
             }
         }
@@ -130,8 +130,8 @@ namespace PreschollManagement.Model
         public List<Food> getListFood()
         {
             string id = this.Id;
-            
-            string query = "select * from monan where mathucdon = "+id+"";
+
+            string query = "select * from monan where mathucdon = " + id + "";
 
             List<Food> list = new List<Food>();
 
@@ -151,7 +151,7 @@ namespace PreschollManagement.Model
                                 reader["mamon"].ToString(),
                                 reader["tenmon"].ToString(),
                                 int.Parse(reader["thu"].ToString()),
-                                reader["buoi"].ToString(),
+                                numSessionToString(reader["buoi"].ToString()),
                                 reader["ghichu"].ToString(),
                                 null
                             );
@@ -165,6 +165,30 @@ namespace PreschollManagement.Model
                     return null;
                 }
             }
+        }
+
+        public static bool addFood(Food food)
+        {
+            return food.addFood();
+        }
+
+        public static string numSessionToString(string session)
+        {
+            if (session == "0")
+                return "Trưa";
+            else if (session == "1")
+                return "Xế";
+            return "Chiều";
+        }
+
+        public static bool updateFood(Food food)
+        {
+            return food.updateFood();
+        }
+
+        public static bool deleteFood(Food food)
+        {
+            return food.deleteFood();
         }
     }
 }

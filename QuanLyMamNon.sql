@@ -249,4 +249,11 @@ select maketqua, hocsinh.mahocsinh, concat(concat(hohocsinh, ' '), tenhocsinh) a
 from kqrenluyen, hocsinh, lop where kqrenluyen.mahocsinh = hocsinh.mahocsinh and hocsinh.malop = Lop.malop and lop.malop = 'L0008' and thang = 1 and nienkhoa = '2023 - 2024'
 
 select * from hocsinh
+select * from lop
 
+select * from thucdon
+select * from monan
+
+insert into monan (mathucdon, tenmon, thu, buoi, ghichu) values (10, N'Canh chua cá lóc', 2, 0, N'Can than vao')
+
+alter table monan alter column ghichu nvarchar(500)
