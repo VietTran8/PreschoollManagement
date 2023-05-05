@@ -39,6 +39,13 @@ namespace PreschollManagement.Model
             this.className = className;
         }
 
+        public Class(string classId, string className, string schoolYear)
+        {
+            this.classId = classId;
+            this.className = className;
+            this.schoolYear = schoolYear;
+        }
+
         public Class(string classId)
         {
             this.classId = classId;

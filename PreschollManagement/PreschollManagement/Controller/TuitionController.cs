@@ -119,9 +119,11 @@ namespace PreschollManagement.Controller
                     listInfo.Add(each.Class.Name);
                     listInfo.Add(each.Info.FirstName);
                     listInfo.Add(each.Info.LastName);
+                    listInfo.Add(each.Class.SchoolYear);
                     myDict.Add(each.Id, listInfo);
                 }
                 List<string> listInfo1 = new List<string>();
+                listInfo1.Add("");
                 listInfo1.Add("");
                 listInfo1.Add("");
                 listInfo1.Add("");

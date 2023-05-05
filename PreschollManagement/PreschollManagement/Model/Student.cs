@@ -86,7 +86,7 @@ namespace PreschollManagement.Model
                 string query = "select hocsinh.mahocsinh, hocsinh.malop, tenlop, " +
                     "hohocsinh, tenhocsinh, gioitinh, CONVERT(VARCHAR(10), ngaysinh, 105) as 'ngaysinh'" +
                     ", dantoc, tongiao, " +
-                    "diachi, quequan, tenphuhuynh, sodienthoai from lop, hocsinh, " +
+                    "diachi, quequan, tenphuhuynh, sodienthoai, substring(nienkhoa, 1, 4) as 'namhoc' from lop, hocsinh, " +
                     "phuhuynh where hocsinh.malop = lop.malop and " +
                     "hocsinh.mahocsinh = phuhuynh.mahocsinh";
 
@@ -97,7 +97,7 @@ namespace PreschollManagement.Model
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        Class newClass = new Class(reader["malop"].ToString(), reader["tenlop"].ToString());
+                        Class newClass = new Class(reader["malop"].ToString(), reader["tenlop"].ToString(), reader["namhoc"].ToString());
                         
                         PersionalInfo myInfo = new PersionalInfo(reader["hohocsinh"].ToString(),
                             reader["tenhocsinh"].ToString(), int.Parse(reader["gioitinh"].ToString()),

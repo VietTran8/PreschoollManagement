@@ -416,6 +416,7 @@ namespace PreschollManagement
             txbStudentFirstName.Text = listStudentId[cbStudentId.Text][1];
             txbStudentLastName.Text = listStudentId[cbStudentId.Text][2];
             cbClass.Text = listStudentId[cbStudentId.Text][0];
+            txbYear.Text = listStudentId[cbStudentId.Text][3];
         }
 
         private void picDeleteStudent_Click(object sender, EventArgs e)

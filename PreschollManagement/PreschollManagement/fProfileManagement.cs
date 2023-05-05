@@ -238,6 +238,8 @@ namespace PreschollManagement
             picDeleteStudent.Enabled = false;
             btnSave.Enabled = true;
             isUpdate = true;
+            btnSave.Text = "Lưu";
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -262,6 +264,19 @@ namespace PreschollManagement
             }
         }
 
+        private int findItemInClass(string item)
+        {
+            foreach (Object itemm in cbClass.Items)
+            {
+                if (((string)itemm).Split(' ')[3].Trim() == item)
+                {
+                    return cbClass.Items.IndexOf(itemm);
+                }
+            }
+
+            return 0;
+        }
+
         private void dgvStudentList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -274,9 +289,9 @@ namespace PreschollManagement
                 DataGridViewRow selectedRow = dgvStudentList.Rows[e.RowIndex];
 
                 txbStudentId.Text = selectedRow.Cells["Mã học sinh"].Value.ToString();
-                string Class = selectedRow.Cells["Tên lớp"].Value.ToString() + " - " +
-                               selectedRow.Cells["Mã lớp"].Value.ToString();
-                cbClass.Text = Class;
+                //cbClass.SelectedItem = Class;
+                cbClass.SelectedIndex = findItemInClass(selectedRow.Cells["Mã lớp"].Value.ToString());
+
                 txbStudentFirstName.Text = selectedRow.Cells["Họ học sinh"].Value.ToString();
                 txbStudentLastName.Text = selectedRow.Cells["Tên học sinh"].Value.ToString();
                 cbGender.Text = selectedRow.Cells["Giới tính"].Value.ToString();

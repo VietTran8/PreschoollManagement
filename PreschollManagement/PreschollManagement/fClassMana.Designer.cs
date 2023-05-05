@@ -42,7 +42,6 @@ namespace PreschollManagement
             this.lbFrom = new System.Windows.Forms.Label();
             this.txbFrom = new System.Windows.Forms.TextBox();
             this.lbSchoolYear = new System.Windows.Forms.Label();
-            this.txbClassLevel = new System.Windows.Forms.TextBox();
             this.lbClassLevel = new System.Windows.Forms.Label();
             this.txbRoom = new System.Windows.Forms.TextBox();
             this.lbRoom = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace PreschollManagement
             this.lbTittle = new System.Windows.Forms.Label();
             this.gbClassList = new System.Windows.Forms.GroupBox();
             this.dgvClassList = new System.Windows.Forms.DataGridView();
+            this.cbClassLevel = new System.Windows.Forms.ComboBox();
             this.pnlInfo.SuspendLayout();
             this.gbFunction.SuspendLayout();
             this.gbInfo.SuspendLayout();
@@ -138,12 +138,12 @@ namespace PreschollManagement
             // 
             // gbInfo
             // 
+            this.gbInfo.Controls.Add(this.cbClassLevel);
             this.gbInfo.Controls.Add(this.lbTo);
             this.gbInfo.Controls.Add(this.txbTo);
             this.gbInfo.Controls.Add(this.lbFrom);
             this.gbInfo.Controls.Add(this.txbFrom);
             this.gbInfo.Controls.Add(this.lbSchoolYear);
-            this.gbInfo.Controls.Add(this.txbClassLevel);
             this.gbInfo.Controls.Add(this.lbClassLevel);
             this.gbInfo.Controls.Add(this.txbRoom);
             this.gbInfo.Controls.Add(this.lbRoom);
@@ -201,13 +201,6 @@ namespace PreschollManagement
             this.lbSchoolYear.Size = new System.Drawing.Size(120, 26);
             this.lbSchoolYear.TabIndex = 8;
             this.lbSchoolYear.Text = "Niên Khóa:";
-            // 
-            // txbClassLevel
-            // 
-            this.txbClassLevel.Location = new System.Drawing.Point(1462, 80);
-            this.txbClassLevel.Name = "txbClassLevel";
-            this.txbClassLevel.Size = new System.Drawing.Size(326, 32);
-            this.txbClassLevel.TabIndex = 7;
             // 
             // lbClassLevel
             // 
@@ -300,6 +293,20 @@ namespace PreschollManagement
             this.dgvClassList.TabIndex = 0;
             this.dgvClassList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClassList_CellClick);
             // 
+            // cbClassLevel
+            // 
+            this.cbClassLevel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbClassLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClassLevel.FormattingEnabled = true;
+            this.cbClassLevel.Items.AddRange(new object[] {
+            "Chồi",
+            "Mầm",
+            "Lá"});
+            this.cbClassLevel.Location = new System.Drawing.Point(1462, 80);
+            this.cbClassLevel.Name = "cbClassLevel";
+            this.cbClassLevel.Size = new System.Drawing.Size(344, 34);
+            this.cbClassLevel.TabIndex = 13;
+            // 
             // fClassMana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -335,7 +342,6 @@ namespace PreschollManagement
         private System.Windows.Forms.Label lbFrom;
         private System.Windows.Forms.TextBox txbFrom;
         private System.Windows.Forms.Label lbSchoolYear;
-        private System.Windows.Forms.TextBox txbClassLevel;
         private System.Windows.Forms.Label lbClassLevel;
         private System.Windows.Forms.TextBox txbRoom;
         private System.Windows.Forms.Label lbRoom;
@@ -351,5 +357,6 @@ namespace PreschollManagement
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbClassList;
         private System.Windows.Forms.DataGridView dgvClassList;
+        private System.Windows.Forms.ComboBox cbClassLevel;
     }
 }

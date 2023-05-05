@@ -23,7 +23,7 @@ namespace PreschollManagement
         {
             foreach (Control con in gbInfo.Controls)
             {
-                if (con is TextBox)
+                if (con is TextBox || con is ComboBox)
                 {
                     con.Enabled = false;
                 }
@@ -33,7 +33,7 @@ namespace PreschollManagement
         {
             foreach (Control con in gbInfo.Controls)
             {
-                if (con is TextBox)
+                if (con is TextBox || con is ComboBox)
                 {
                     con.Enabled = true;
                 }
@@ -88,7 +88,7 @@ namespace PreschollManagement
             //Clear textbox:
             foreach (Control con in gbInfo.Controls)
             {
-                if (con is TextBox)
+                if (con is TextBox || con is ComboBox)
                 {
                     con.Text = "";
                 }
@@ -130,7 +130,7 @@ namespace PreschollManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txbClassLevel.Text == "" || txbClassName.Text == "" || txbFrom.Text == "" || txbTo.Text == "" ||
+            if (cbClassLevel.Text == "" || txbClassName.Text == "" || txbFrom.Text == "" || txbTo.Text == "" ||
                 txbRoom.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin", "Cảnh báo", MessageBoxButtons.OK,
@@ -150,7 +150,7 @@ namespace PreschollManagement
                     {
                         string className = txbClassName.Text,
                             room = txbRoom.Text,
-                            classLevel = txbClassLevel.Text,
+                            classLevel = cbClassLevel.Text,
                             schoolYearFrom = txbFrom.Text,
                             schoolYearTo = txbTo.Text;
                         string message = ClassController.addClass(className, room, classLevel, schoolYearFrom, schoolYearTo);
@@ -165,7 +165,7 @@ namespace PreschollManagement
                     {
                         string className = txbClassName.Text,
                                                 room = txbRoom.Text,
-                                                classLevel = txbClassLevel.Text,
+                                                classLevel = cbClassLevel.Text,
                                                 schoolYearFrom = txbFrom.Text,
                                                 schoolYearTo = txbTo.Text,
                                                 classId = txbClassId.Text;
@@ -190,7 +190,7 @@ namespace PreschollManagement
 
                 txbClassId.Text = selectedRow.Cells[0].Value.ToString(); 
                 txbClassName.Text = selectedRow.Cells[1].Value.ToString();
-                txbClassLevel.Text = selectedRow.Cells[3].Value.ToString();
+                cbClassLevel.Text = selectedRow.Cells[3].Value.ToString();
                 txbRoom.Text = selectedRow.Cells[2].Value.ToString();
 
                 string[] schoolYear = selectedRow.Cells[4].Value.ToString().Split('-');

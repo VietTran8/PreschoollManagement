@@ -469,7 +469,7 @@ namespace PreschollManagement.Model
                 conn.Open();
                 string query = "select hocsinh.mahocsinh, concat(concat(hohocsinh, ' '), tenhocsinh) as 'tenhocsinh', " +
                     "tenlop as 'lop', tienhocphi, tienbaohiem, tiencapduong, phikhac, " +
-                    "CONVERT(VARCHAR(10), handong, 103) as 'handong'  from hocsinh, lop, hocphi where " +
+                    "tienhocphi + tienbaohiem + tiencapduong + phikhac as 'handong'  from hocsinh, lop, hocphi where " +
                     "hocsinh.malop = lop.malop and hocsinh.mahocsinh = hocphi.mahocsinh and tenlop = @tenlop " +
                     "and namhoc = @namhoc";
 

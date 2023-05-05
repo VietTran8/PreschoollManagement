@@ -429,7 +429,7 @@ namespace PreschollManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbTuitionRow AddtbTuitionRow(string mahocsinh, string tenhocsinh, string lop, double tienhocphi, double tienbaohiem, double tiencapduong, string phikhac, string handong) {
+            public tbTuitionRow AddtbTuitionRow(string mahocsinh, string tenhocsinh, string lop, double tienhocphi, double tienbaohiem, double tiencapduong, string phikhac, double handong) {
                 tbTuitionRow rowtbTuitionRow = ((tbTuitionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         mahocsinh,
@@ -489,7 +489,7 @@ namespace PreschollManagement {
                 base.Columns.Add(this.columntiencapduong);
                 this.columnphikhac = new global::System.Data.DataColumn("phikhac", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnphikhac);
-                this.columnhandong = new global::System.Data.DataColumn("handong", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnhandong = new global::System.Data.DataColumn("handong", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhandong);
             }
             
@@ -745,10 +745,10 @@ namespace PreschollManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string handong {
+            public double handong {
                 get {
                     try {
-                        return ((string)(this[this.tabletbTuition.handongColumn]));
+                        return ((double)(this[this.tabletbTuition.handongColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'handong\' in table \'tbTuition\' is DBNull.", e);
