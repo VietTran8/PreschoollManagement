@@ -69,10 +69,6 @@ namespace PreschollManagement.Model
             this.tuitionId = tuitionId;
             this.year = year;
         }
-        public double totalTuition()
-        {
-            return this.tuition + this.insurance + this.otherFee + this.alimony;
-        }
 
         public string Id
         {

@@ -151,7 +151,7 @@ namespace PreschollManagement.Controller
             {
                 foreach (Class each in list)
                 {
-                    response.Add(each.Name + " - " + each.Id);
+                    response.Add(each.Name + " - " + each.Id + " - " + each.SchoolYear); 
                 }
                 return response;
             }

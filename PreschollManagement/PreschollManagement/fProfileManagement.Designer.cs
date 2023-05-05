@@ -322,6 +322,7 @@ namespace PreschollManagement
             // cbClass
             // 
             this.cbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClass.DropDownWidth = 250;
             this.cbClass.FormattingEnabled = true;
             this.cbClass.Location = new System.Drawing.Point(236, 113);
             this.cbClass.Name = "cbClass";

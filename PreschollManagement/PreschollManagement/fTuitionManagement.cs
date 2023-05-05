@@ -429,5 +429,10 @@ namespace PreschollManagement
                 Init(); 
             }
         }
+
+        private void dtpExpirationDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpPaymentDate.Value = dtpExpirationDate.Value;
+        }
     }
 }

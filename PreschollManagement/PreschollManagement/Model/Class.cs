@@ -177,13 +177,10 @@ namespace PreschollManagement.Model
             using (SqlConnection conn = DB.Instance.getConnection())
             {
                 conn.Open();
-
-                string query = "delete lop where malop = @malop";
+                
+                string query = "exec deleteClass '"+this.classId+"'";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
-
-                //Add params to command
-                cmd.Parameters.AddWithValue("@malop", this.classId);
 
                 try
                 {
@@ -196,6 +193,7 @@ namespace PreschollManagement.Model
                 }
                 catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return false;
                 }
 

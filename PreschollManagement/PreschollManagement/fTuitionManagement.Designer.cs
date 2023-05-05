@@ -604,6 +604,7 @@ namespace PreschollManagement
             this.dtpExpirationDate.Name = "dtpExpirationDate";
             this.dtpExpirationDate.Size = new System.Drawing.Size(389, 32);
             this.dtpExpirationDate.TabIndex = 37;
+            this.dtpExpirationDate.ValueChanged += new System.EventHandler(this.dtpExpirationDate_ValueChanged);
             // 
             // lbExpirationDate
             // 

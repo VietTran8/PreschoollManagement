@@ -33,7 +33,6 @@ create table phuhuynh(
 	foreign key (mahocsinh) references hocsinh(mahocsinh)
 )
 
-
 create table kqrenluyen(
 	maketqua int primary key IDENTITY(1, 1),
 	mahocsinh varchar(6),
@@ -89,7 +88,7 @@ go
 SET DATEFORMAT dmy; 
 go
 
-
+select * from taikhoan
 --Them lop hoc procedure
 create proc themLop @ten nvarchar(100), @phong varchar(10), @khoilop nvarchar(50),
 @nienkhoa varchar(11), @dantoc nvarchar(50), 
@@ -257,3 +256,18 @@ select * from monan
 insert into monan (mathucdon, tenmon, thu, buoi, ghichu) values (10, N'Canh chua cá lóc', 2, 0, N'Can than vao')
 
 alter table monan alter column ghichu nvarchar(500)
+go
+create proc deleteClass @malop varchar(5) as
+begin 
+	delete phuhuynh where mahocsinh in (select mahocsinh from hocsinh where malop in (select malop from lop where malop = @malop))
+	delete hocphi where mahocsinh in (select mahocsinh from hocsinh where malop in (select malop from lop where malop = @malop))
+	delete kqrenluyen where mahocsinh in (select mahocsinh from hocsinh where malop in (select malop from lop where malop = @malop))
+
+	delete hocsinh where malop in (select malop from lop where malop = @malop)
+
+	delete lop where malop = @malop
+end
+
+exec deleteClass 'L0008'
+
+select * from hocsinh

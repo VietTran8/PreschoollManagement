@@ -67,5 +67,19 @@ namespace PreschollManagement.Controller
             Account newAccount = new Account(username, password);
             return newAccount.accountValidate();
         }
+
+        public static string changePassword(string username, string oldPassword, string newPassword)
+        {
+            Account myAcc = new Account(username, newPassword);
+            if (validateAccount(username, oldPassword) != -1)
+            {
+                if (myAcc.resetPassword())
+                {
+                    return "Đổi mật khẩu thành công!";
+                }
+                return "Có lỗi xảy ra!";
+            }
+            return "Mật khẩu cũ không đúng!";
+        }
     }
 }

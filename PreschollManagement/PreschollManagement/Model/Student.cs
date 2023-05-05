@@ -206,6 +206,10 @@ namespace PreschollManagement.Model
                 
 
                 string query = "delete phuhuynh where mahocsinh = @mahocsinh ; ";
+                query += "delete kqrenluyen where mahocsinh = @mahocsinh; ";
+                query += "delete hocphi where mahocsinh = @mahocsinh; ";
+
+
                 query += "delete hocsinh where mahocsinh = @mahocsinh ";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -224,6 +228,7 @@ namespace PreschollManagement.Model
                 }
                 catch (Exception e)
                 {
+                    MessageBox.Show(e.ToString());
                     return false;
                 }
             }

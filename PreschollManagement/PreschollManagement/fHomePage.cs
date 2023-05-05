@@ -13,10 +13,12 @@ namespace PreschollManagement
     public partial class fHomePage : Form
     {
         private static int role;
-        public fHomePage(int nrole)
+        private static string username;
+        public fHomePage(string nusername,  int nrole)
         {
             InitializeComponent();
             role = nrole;
+            username = nusername;
         }
 
         private void picExitIcon_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace PreschollManagement
 
         private void tsAccountSetting_Click(object sender, EventArgs e)
         {
-            fAccountConfig form = new fAccountConfig();
+            fAccountConfig form = new fAccountConfig(username);
             form.ShowDialog();
         }
 

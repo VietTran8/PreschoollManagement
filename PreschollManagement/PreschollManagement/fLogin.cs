@@ -32,7 +32,7 @@ namespace PreschollManagement
                 {
                     MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } else {
-                    fHomePage form = new fHomePage(role);
+                    fHomePage form = new fHomePage(username, role);
                     this.Hide();
                     form.ShowDialog();
                     this.Close();
