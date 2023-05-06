@@ -106,6 +106,7 @@ namespace PreschollManagement
 
         private void fHomePage_Load(object sender, EventArgs e)
         {
+            lbUsername.Text = "Xin chào, " + username;
             switch (role) 
             {
                 case 0:

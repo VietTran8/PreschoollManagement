@@ -271,3 +271,6 @@ end
 exec deleteClass 'L0008'
 
 select * from hocsinh
+
+select * from kqrenluyen
+delete kqrenluyen

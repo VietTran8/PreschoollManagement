@@ -41,6 +41,7 @@ namespace PreschollManagement
             this.picThumb = new System.Windows.Forms.PictureBox();
             this.picExitIcon = new System.Windows.Forms.PictureBox();
             this.lbExit = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.Label();
             this.menuHomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picThumb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExitIcon)).BeginInit();
@@ -102,12 +103,13 @@ namespace PreschollManagement
             // menuHomePage
             // 
             this.menuHomePage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuHomePage.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuHomePage.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuHomePage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsAdmin});
             this.menuHomePage.Location = new System.Drawing.Point(0, 0);
             this.menuHomePage.Name = "menuHomePage";
-            this.menuHomePage.Size = new System.Drawing.Size(1924, 36);
+            this.menuHomePage.Size = new System.Drawing.Size(1924, 33);
             this.menuHomePage.TabIndex = 4;
             this.menuHomePage.Text = "Admin";
             // 
@@ -118,7 +120,7 @@ namespace PreschollManagement
             this.tsAccountMana,
             this.tsClassMana});
             this.tsAdmin.Name = "tsAdmin";
-            this.tsAdmin.Size = new System.Drawing.Size(92, 30);
+            this.tsAdmin.Size = new System.Drawing.Size(92, 29);
             this.tsAdmin.Text = "Quản trị";
             // 
             // tsAccountSetting
@@ -146,9 +148,9 @@ namespace PreschollManagement
             // 
             this.picThumb.Dock = System.Windows.Forms.DockStyle.Right;
             this.picThumb.Image = global::PreschollManagement.Properties.Resources.homepage_background;
-            this.picThumb.Location = new System.Drawing.Point(338, 36);
+            this.picThumb.Location = new System.Drawing.Point(338, 33);
             this.picThumb.Name = "picThumb";
-            this.picThumb.Size = new System.Drawing.Size(1586, 931);
+            this.picThumb.Size = new System.Drawing.Size(1586, 934);
             this.picThumb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picThumb.TabIndex = 5;
             this.picThumb.TabStop = false;
@@ -158,7 +160,7 @@ namespace PreschollManagement
             this.picExitIcon.BackColor = System.Drawing.Color.Transparent;
             this.picExitIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picExitIcon.Image = global::PreschollManagement.Properties.Resources.Visualpharm_Must_Have_Log_Out_256;
-            this.picExitIcon.Location = new System.Drawing.Point(116, 372);
+            this.picExitIcon.Location = new System.Drawing.Point(119, 456);
             this.picExitIcon.Name = "picExitIcon";
             this.picExitIcon.Size = new System.Drawing.Size(79, 78);
             this.picExitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -174,11 +176,23 @@ namespace PreschollManagement
             this.lbExit.BackColor = System.Drawing.Color.Transparent;
             this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbExit.Location = new System.Drawing.Point(111, 453);
+            this.lbExit.Location = new System.Drawing.Point(114, 537);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(71, 26);
             this.lbExit.TabIndex = 8;
             this.lbExit.Text = "Thoát";
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbUsername.Location = new System.Drawing.Point(53, 394);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(119, 26);
+            this.lbUsername.TabIndex = 9;
+            this.lbUsername.Text = "Xin chào, ";
             // 
             // fHomePage
             // 
@@ -187,6 +201,7 @@ namespace PreschollManagement
             this.BackgroundImage = global::PreschollManagement.Properties.Resources.formhomepage_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 967);
+            this.Controls.Add(this.lbUsername);
             this.Controls.Add(this.lbExit);
             this.Controls.Add(this.picExitIcon);
             this.Controls.Add(this.picThumb);
@@ -225,5 +240,6 @@ namespace PreschollManagement
         private System.Windows.Forms.PictureBox picExitIcon;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.ToolStripMenuItem tsClassMana;
+        private System.Windows.Forms.Label lbUsername;
     }
 }

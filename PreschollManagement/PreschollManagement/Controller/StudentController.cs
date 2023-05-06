@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PreschollManagement.Controller
 {
-    class StudentController
+    public class StudentController
     {
         public static DataTable getListStudent()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PreschollManagement.Controller
 {
-    class AccountController
+    public class AccountController
     {
 
         public static List<Account> getListAccount()

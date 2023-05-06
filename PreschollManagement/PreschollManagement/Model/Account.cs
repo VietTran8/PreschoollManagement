@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PreschollManagement.Model
 {
-    class Account
+    public class Account
     {
         private string username;
         private string password;

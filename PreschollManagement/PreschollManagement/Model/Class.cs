@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PreschollManagement.Model
 {
-    class Class
+    public class Class
     {
         private string classId;
         private string className;
@@ -173,6 +173,7 @@ namespace PreschollManagement.Model
                 }
                 catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return false;
                 }
             }
