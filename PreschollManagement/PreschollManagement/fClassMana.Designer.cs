@@ -37,6 +37,7 @@ namespace PreschollManagement
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbInfo = new System.Windows.Forms.GroupBox();
+            this.cbClassLevel = new System.Windows.Forms.ComboBox();
             this.lbTo = new System.Windows.Forms.Label();
             this.txbTo = new System.Windows.Forms.TextBox();
             this.lbFrom = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace PreschollManagement
             this.lbTittle = new System.Windows.Forms.Label();
             this.gbClassList = new System.Windows.Forms.GroupBox();
             this.dgvClassList = new System.Windows.Forms.DataGridView();
-            this.cbClassLevel = new System.Windows.Forms.ComboBox();
             this.pnlInfo.SuspendLayout();
             this.gbFunction.SuspendLayout();
             this.gbInfo.SuspendLayout();
@@ -62,6 +62,7 @@ namespace PreschollManagement
             // 
             // pnlInfo
             // 
+            this.pnlInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlInfo.Controls.Add(this.gbFunction);
             this.pnlInfo.Controls.Add(this.gbInfo);
             this.pnlInfo.Controls.Add(this.lbTittle);
@@ -158,6 +159,20 @@ namespace PreschollManagement
             this.gbInfo.TabIndex = 1;
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Thông tin lớp học";
+            // 
+            // cbClassLevel
+            // 
+            this.cbClassLevel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbClassLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClassLevel.FormattingEnabled = true;
+            this.cbClassLevel.Items.AddRange(new object[] {
+            "Chồi",
+            "Mầm",
+            "Lá"});
+            this.cbClassLevel.Location = new System.Drawing.Point(1462, 80);
+            this.cbClassLevel.Name = "cbClassLevel";
+            this.cbClassLevel.Size = new System.Drawing.Size(344, 34);
+            this.cbClassLevel.TabIndex = 13;
             // 
             // lbTo
             // 
@@ -292,20 +307,6 @@ namespace PreschollManagement
             this.dgvClassList.Size = new System.Drawing.Size(1866, 453);
             this.dgvClassList.TabIndex = 0;
             this.dgvClassList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClassList_CellClick);
-            // 
-            // cbClassLevel
-            // 
-            this.cbClassLevel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbClassLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbClassLevel.FormattingEnabled = true;
-            this.cbClassLevel.Items.AddRange(new object[] {
-            "Chồi",
-            "Mầm",
-            "Lá"});
-            this.cbClassLevel.Location = new System.Drawing.Point(1462, 80);
-            this.cbClassLevel.Name = "cbClassLevel";
-            this.cbClassLevel.Size = new System.Drawing.Size(344, 34);
-            this.cbClassLevel.TabIndex = 13;
             // 
             // fClassMana
             // 
