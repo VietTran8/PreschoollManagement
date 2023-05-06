@@ -1,0 +1,1 @@
+sqmcmd -E -S .\SQLExpress -i quanlymamnon.sql
