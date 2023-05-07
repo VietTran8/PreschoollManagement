@@ -19,7 +19,6 @@ D:\Study\CNPM\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagem
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\PreschollManagement.exe.config
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\PreschollManagement.exe
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\bin\Debug\PreschollManagement.pdb
-D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.csproj.AssemblyReference.cache
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fAccountConfig.resources
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fChooseClass.resources
 D:\Study\CNPM\FINAL_REPORT\PreschollManagement\PreschollManagement\obj\Debug\PreschollManagement.fClassMana.resources
